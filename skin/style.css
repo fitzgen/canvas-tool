@@ -12,3 +12,7 @@
 .theme-light body > p {
   color: #ed2655;
 }
+
+#canvas-sidebar {
+    min-width: 200px;
+}

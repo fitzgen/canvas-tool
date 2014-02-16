@@ -1,27 +1,66 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
+<?xml-stylesheet type="text/css" href="chrome://browser/skin/"?>
+<?xml-stylesheet type="text/css" href="chrome://browser/skin/devtools/common.css"?>
+<?xml-stylesheet type="text/css" href="chrome://canvas-tool-o7Q58JuhXx4sXG22/skin/style.css"?>
+
 <!DOCTYPE window [
-  <!ENTITY % MyAddonDTD SYSTEM "chrome://my-addon/locale/strings.dtd">
-   %MyAddonDTD;
+  <!ENTITY % CanvasDTD SYSTEM "chrome://canvas-tool-o7Q58JuhXx4sXG22/locale/strings.dtd">
+   %CanvasDTD;
 ]>
 
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-  <head>
-    <link rel="stylesheet" href="chrome://browser/skin/"/>
-    <link rel="stylesheet" href="chrome://browser/skin/devtools/common.css"/>
-    <link rel="stylesheet" href="chrome://my-addon/skin/style.css"/>
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        macanimationtype="document"
+        fullscreenbutton="true"
+        screenX="4" screenY="4"
+        width="960" height="480"
+        persist="screenX screenY width height sizemode">
 
-    <xul:script src="chrome://browser/content/devtools/theme-switching.js"/>
-    <xul:script src="tool.js"/>
-  </head>
+  <!-- Scripts -->
+  <script src="chrome://browser/content/devtools/theme-switching.js"/>
+  <script src="tool.js"/>
 
-  <body>
-    <p>&MyAddonUI.label;</p>
-  </body>
+  <!-- Commands -->
 
-</html>
+  <!-- Popups -->
+
+  <!-- Keys -->
+
+  <!-- Content -->
+  <hbox class="theme-body" flex="1">
+    <vbox id="canvas-sidebar">
+      <toolbar id="canvas-toolbar"
+               class="devtools-toolbar">
+        <hbox id="canvas-controls"
+              class="devtools-toolbarbutton-group">
+          <toolbarbutton id="record"
+                         class="devtools-toolbarbutton"
+                         label="Record"
+                         tabindex="0"/>
+        </hbox>
+      </toolbar>
+      <box>
+        uno
+      </box>
+      <box>
+        dos
+      </box>
+      <box>
+        tres
+      </box>
+      <box>
+        quattro
+      </box>
+    </vbox>
+
+    <splitter class="devtools-side-splitter" />
+
+    <box id="canvas-view" flex="1">
+      Canvas goes here
+    </box>
+  </hbox>
+</window>
